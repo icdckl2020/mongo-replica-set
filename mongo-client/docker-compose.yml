@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web-app:
+    image: mongoclient-app
+    build: .
+    ports:
+      - "9090:9090"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    extra_hosts:
+      - "mongo1:10.150.40.79"
+      - "mongo2:10.150.50.134"
+      - "mongo3:10.150.60.88"

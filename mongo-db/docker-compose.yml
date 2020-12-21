@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mongo-rs0:
+    image: "mongo"
+    command: --replSet rs0
+    ports:
+      - "27017:27017"
+    volumes:
+      - /mongo-data:/data/db
+    extra_hosts:
+      - "mongo1:10.150.40.79"
+      - "mongo2:10.150.50.134"
+      - "mongo3:10.150.60.88"
+
+      
